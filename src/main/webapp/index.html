@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+  <h2>liste des produits</h2>
+ <br > 
+  <table class="table table-hover">
+    <thead>
+      <tr>
+      
+        <th>id</th>
+        <th>libelee</th>
+        <th>price</th>
+        <th>qte</th>
+        <th>traitement</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="prdt : ${listeProduct}">
+        <td th:text="${prdt.id}"></td>
+        <td th:text="${prdt.libellee}"></td>
+        <td th:text="${prdt.price}"></td>
+        <td th:text="${prdt.qte}"></td>
+        <td><button class="btn btn-success">update</button>  <button class="btn btn-danger">supprimer</button> </td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
